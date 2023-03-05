@@ -40,14 +40,22 @@ const dog = {
     dogAge
 }
 
-
 console.log(dog);
 
+console.log('---------------------');
 
+// for in
 
+const person = {
+    name: 'Karol',
+    age: '29',
+    sex: 'yes, please',
+    'hair-color': 'blonde'
+}
 
-
-
+for (const data in person) {
+    console.log(person[data]);
+}
 
 
 
