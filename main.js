@@ -42,7 +42,7 @@ const dog = {
 
 console.log(dog);
 
-console.log('---------------------');
+console.log('----------for in-----------');
 
 // for in
 
@@ -57,7 +57,18 @@ for (const data in person) {
     console.log(person[data]);
 }
 
+console.log('----------this-----------');
 
+// this
+
+const user = {
+    name: 'Karol',
+    showName() {
+        console.log(this.name);
+    }
+}
+
+user.showName()
 
 
 
