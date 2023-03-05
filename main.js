@@ -70,6 +70,29 @@ const user = {
 
 user.showName()
 
+console.log('----------constructor-----------');
+
+function Constr(x, y) {
+    this.name = x
+    this.age = y
+    this.hello = function () {
+        console.log(`Cześć ${this.name}`);
+    }
+}
+
+const newConstr = new Constr('Karol', 29)
+const newConstr2 = new Constr('Jurek', 21241252352359)
+const newConstr3 = new Constr('Grażyna', 33)
+
+console.log(newConstr, newConstr2, newConstr3);
+
+
+
+
+
+
+
+
 
 
 
