@@ -111,9 +111,9 @@ newHuman3.showSurname()
 
 // task no.1
 
-const btn1 = document.querySelector('.btn-1')
-const btn2 = document.querySelector('.btn-2')
-const btn3 = document.querySelector('.btn-3')
+// const btn1 = document.querySelector('.btn-1')
+// const btn2 = document.querySelector('.btn-2')
+// const btn3 = document.querySelector('.btn-3')
 const p = document.querySelector('p')
 
 // console.log(btn1, p);
@@ -133,17 +133,79 @@ Food.prototype.menu = function () {
 
 // pizza.menu() `${this.name} kosztuje ${this.price}`
 
+// btn1.addEventListener('click', () => pizza.menu())
+// btn2.addEventListener('click', () => pasta.menu())
+// btn3.addEventListener('click', () => soup.menu())
 
-btn1.addEventListener('click', () => pizza.menu())
-btn2.addEventListener('click', () => pasta.menu())
-btn3.addEventListener('click', () => soup.menu())
+// this v2
 
+const dear = {
+    name: 'jurek',
+    surmane: 'dziki',
+    adress: {
+        city: 'zabrze',
+        home: 'las',
+        showAdress: function () {
+            console.log(this);
+        }
+    }
+}
 
+dear.adress.showAdress()
 
+function Dears(hehe) {
+    this.name = hehe
+}
 
+const dear1 = new Dears('patryk')
+const dear2 = new Dears('grzegorz')
 
+console.log(dear1, dear2);
 
+// this v3
 
+const btns = document.querySelectorAll('button')
+
+btns.forEach(btn => btn.addEventListener('click', function () {
+    console.log(this.textContent);
+}))
+
+// bind
+
+console.log('----------bind-----------');
+
+function test() {
+    console.log(this);
+    console.log(this.name);
+}
+
+const car1 = {
+    name: 'audi'
+}
+const car2 = {
+    name: 'bmw'
+}
+const car3 = {
+    name: 'toyota'
+}
+
+test.bind(car3)()
+
+console.log('----------call & apply-----------');
+
+const movie = {
+    title: 'Avengers'
+}
+
+function showMovie(price, cinema) {
+    console.log(`Film: ${this.title}, cena: ${price}, kino: ${cinema}.`);
+}
+
+showMovie(30, 'multikino')
+
+showMovie.call(movie, 35, 'superkino')
+
+showMovie.apply(movie, [35, 'superkino'])
 
 
 
