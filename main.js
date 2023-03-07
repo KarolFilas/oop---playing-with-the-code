@@ -104,8 +104,43 @@ Human.prototype.showSurname = function () {
     console.log(`My surname is ${this.surname}`);
 }
 
+Human.prototype.age = 18
+
 newHuman2.showSurname()
 newHuman3.showSurname()
+
+// task no.1
+
+const btn1 = document.querySelector('.btn-1')
+const btn2 = document.querySelector('.btn-2')
+const btn3 = document.querySelector('.btn-3')
+const p = document.querySelector('p')
+
+// console.log(btn1, p);
+
+function Food(x, y) {
+    this.name = x
+    this.price = y
+}
+
+const pizza = new Food('pizza', 39);
+const pasta = new Food('carbonarra', 34);
+const soup = new Food('pomidorowa', 19);
+
+Food.prototype.menu = function () {
+    console.log(`${this.name} kosztuje ${this.price}`);
+}
+
+// pizza.menu() `${this.name} kosztuje ${this.price}`
+
+
+btn1.addEventListener('click', () => pizza.menu())
+btn2.addEventListener('click', () => pasta.menu())
+btn3.addEventListener('click', () => soup.menu())
+
+
+
+
 
 
 
