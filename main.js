@@ -86,11 +86,26 @@ const newConstr3 = new Constr('Grażyna', 33)
 
 console.log(newConstr, newConstr2, newConstr3);
 
+console.log('----------prototype-----------');
 
 
+function Human(a, b) {
+    this.name = a
+    this.surname = b
+}
 
+const newHuman = new Human('Karol', 'Filas')
+const newHuman2 = new Human('Jadzia', 'Baba')
+const newHuman3 = new Human('Arnolad', 'Szwarceneger')
 
+console.log(newHuman, newHuman2, newHuman3);
 
+Human.prototype.showSurname = function () {
+    console.log(`My surname is ${this.surname}`);
+}
+
+newHuman2.showSurname()
+newHuman3.showSurname()
 
 
 
