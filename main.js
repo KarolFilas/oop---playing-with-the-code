@@ -207,6 +207,91 @@ showMovie.call(movie, 35, 'superkino')
 
 showMovie.apply(movie, [35, 'superkino'])
 
+console.log('----------class-----------');
+
+function Guest(name, age) {
+    this.name = name
+    this.age = age
+}
+
+Guest.prototype.showAge = function () {
+    console.log(`Mam ${this.age} lata!`);
+}
+
+Guest.prototype.sayHi = function () {
+    console.log(`Cześć, jestem ${this.name}!`);
+}
+
+const personOne = new Guest('Ania', 23)
+
+personOne.sayHi()
+personOne.showAge()
+
+class Guest2 {
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
+
+    sayHi() {
+        console.log(`Cześć, jestem ${this.name}!`);
+    }
+
+    showAge() {
+        console.log(`Mam ${this.age} lat!`);
+    }
+}
+
+const personTwo = new Guest2('Jolanta', 45)
+personTwo.sayHi()
+personTwo.showAge()
+
+// some examples
+
+function Football(name, number, club) {
+    this.name = name
+    this.number = number
+    this.club = club
+}
+
+Football.prototype.showPlayer = function () {
+    console.log(`${this.name} z numerem na koszulce ${this.number} gra dla klubu sportowego o nazwie ${this.club}, proszę o oklaski!`);
+}
+
+const lewy = new Football('Robert Lewandowski', 9, 'Fc Barcelona')
+
+console.log(lewy);
+lewy.showPlayer()
+
+class Foot {
+    constructor(name, number, club) {
+        this.name = name
+        this.number = number
+        this.club = club
+    }
+    showPla() {
+        console.log(`${this.name} z numerem na koszulce ${this.number} gra dla klubu sportowego o nazwie ${this.club}, proszę o oklaski!`);
+    }
+
+}
+
+const dembele = new Foot('Dembele', 7, 'Fc barcelona')
+console.log(dembele);
+dembele.showPla()
+
+console.log('----------extends & super-----------');
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
