@@ -281,12 +281,40 @@ dembele.showPla()
 
 console.log('----------extends & super-----------');
 
+class Animal {
+    constructor(name) {
+        this.name = name
+    }
 
+    sound() {
+        console.log('Zawierzak robi hau hau');
+    }
+}
 
+class Dog extends Animal {
+    constructor(name, age) {
+        super(name)
+        this.age = age
+    }
+}
 
+class Cat extends Animal {
+    constructor(name) {
+        super(name)
+    }
 
+    sound() {
+        console.log('miau miau');
+    }
+}
 
+const newDog = new Dog('Drops', 6)
+console.log(newDog);
+newDog.sound()
 
+const newCat = new Cat('Filemon')
+newCat.sound()
+console.log(newCat);
 
 
 
