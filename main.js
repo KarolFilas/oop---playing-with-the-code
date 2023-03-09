@@ -299,10 +299,6 @@ class Dog extends Animal {
 }
 
 class Cat extends Animal {
-    constructor(name) {
-        super(name)
-    }
-
     sound() {
         console.log('miau miau');
     }
@@ -315,6 +311,67 @@ newDog.sound()
 const newCat = new Cat('Filemon')
 newCat.sound()
 console.log(newCat);
+
+console.log('----------Object.assign-----------');
+
+const one = {
+    name: 'Lilly',
+    age: 23,
+}
+
+const two = {
+    name: 'Tom',
+    type: 'dog'
+}
+
+const oneTwo = Object.assign({}, one, two)
+
+console.log(one);
+console.log(two);
+console.log(oneTwo);
+
+const oneCopy = Object.assign({}, one)
+oneCopy.age = 33
+oneCopy.weight = 22
+console.log(oneCopy);
+console.log(one);
+const twoCopy = Object.assign({}, two)
+console.log(twoCopy);
+
+console.log('----------destrukturyzacja-----------');
+
+const girl = {
+    name: 'Danuta',
+    age: 23,
+    job: 'DJ',
+    pet: {
+        spieces: 'piesek',
+        race: 'pitbull'
+    }
+}
+
+const showGirl = ({ name, age, job }) => {
+    // const { name: firstName, age, job } = girl
+    console.log(`${name} pracuje jako ${job} i ma ${age} lata.`);
+}
+
+showGirl(girl)
+
+const showGirl2 = ({ pet: { spieces, race } }) => {
+    console.log(`Jej zwierze to ${spieces}, o rasie ${race}.`);
+}
+
+showGirl2(girl)
+
+const showGirl3 = () => {
+    const { pet: { spieces, race } } = girl
+    console.log(`Jej zwierze to ${spieces}, o rasie ${race}.`);
+}
+
+showGirl3(girl)
+
+
+
 
 
 
